@@ -1,0 +1,31 @@
+{% extends 'book_app/base.html' %}
+{% block content %}
+  <div class="back-link-div">
+    <a class="back-link" href="{{ request.META.HTTP_REFERER }}">Назад</a>
+  </div>
+  <div class="container">
+    <form class="px-5"
+          action="{% url 'add_book' %}"
+          method="post"
+          enctype="multipart/form-data">
+      <div class="form-error">
+        {{ form.non_field_errors }}
+      </div>
+      {% csrf_token %}
+      {% for field in form %}
+        <p>
+          <label class="form-label" for="{{ field.id_for_label }}">
+            {{ field.label }}:
+          </label>
+          {{ field }}
+        </p>
+        <div class="form-error">
+          {{ field.errors }}
+        </div>
+      {% endfor %}
+      <button type="submit">
+        Добавить
+      </button>
+    </form>
+  </div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'book_app/base.html' %}
+{% block content %}
+  <div class="back-link-div">
+    <a class="back-link" href="{{ request.META.HTTP_REFERER }}">Назад</a>
+  </div>
+  <div class="container text-center d-flex">
+    {% for book in books %}
+      <div class="card-book">
+        <h1>
+          {{ book.title }}
+        </h1>
+        <h3>
+          {{ book.author }}
+        </h3>
+        <div class="buttons">
+          <a class="btn btn-primary" href="{{ book.get_absolute_url }}">Подробнее</a>
+          <a class="btn btn-primary" href="{{ book.update_url }}">Изменить</a>
+          <a class="btn btn-primary" href="{{ book.delete_url }}">Удалить</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

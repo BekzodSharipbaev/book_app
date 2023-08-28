@@ -1,0 +1,37 @@
+{% extends 'book_app/base.html' %}
+{% block content %}
+  <div id="carouselExample"
+       class="carousel slide text-align-center w-300 m-auto p-5">
+    <div class="carousel-inner text-center w-75 m-auto">
+      <div class="carousel-item active">
+        <p class="d-block w-100">
+          Любите книгу – она облегчит вам жизнь, дружески поможет разобраться в пёстрой и бурной путанице мыслей, чувств, событий. Она научит вас уважать человека и самих себя, она окрыляет ум и сердце чувством любви к миру, к человечеству. М. Горький
+        </p>
+      </div>
+      <div class="carousel-item">
+        <p class="d-block w-100">
+          Много есть на свете хороших книг, но эти книги хороши только для тех людей, которые умеют их читать. Умение читать хорошие книги вовсе не равносильно знанию грамоты. Д.И. Писарев
+        </p>
+      </div>
+      <div class="carousel-item">
+        <p class="d-block w-100">
+          Когда я вижу вокруг себя, как люди, не зная, куда девать свое свободное время, изыскивают самые жалкие занятия и развлечения, я разыскиваю книгу и говорю внутренне: этого одного довольно на целую жизнь. Ф. Достоевский
+        </p>
+      </div>
+    </div>
+    <button class="carousel-control-prev carousel-btn"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next carousel-btn"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+{% endblock content %}

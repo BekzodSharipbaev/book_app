@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+          crossorigin="anonymous" />
+    <!-- Mine styles -->
+    <link type="text/css"
+          rel="stylesheet"
+          href="{% static 'book_app/css/styles.css' %}" />
+    <!-- Logo -->
+    <link rel="shortcut icon"
+          href="{% static 'book_app/images/book-logo.jpg' %}"
+          type="image/x-icon" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {% block nav %}
+      <nav class="navbar navbar-expand-lg sticky-top mb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-3" href="{% url 'books' %}">Книги</a>
+          <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+            <a class="nav-link active"
+               aria-current="page"
+               href="{% url 'add_book' %}">Добавить книгу</a>
+          </form>
+        </div>
+      </div>
+    </nav>
+  {% endblock nav %}
+  {% block content %}
+  {% endblock content %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+          crossorigin="anonymous"></script>
+</body>
+</html>

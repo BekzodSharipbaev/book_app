@@ -1,0 +1,31 @@
+{% extends 'book_app/base.html' %}
+{% block content %}
+  <div class="book-box text-center m-auto">
+    <h1>
+      Название книги:
+      {{ book.title }}
+    </h1>
+    <h3>
+      Автор:
+      {{ book.author }}
+    </h3>
+    <h5>
+      Год издания:
+      {{ book.date_published }}
+    </h5>
+    {% for g in book.genre.all %}
+      <h5>
+        Жанр:
+        {{ g }}
+      </h5>
+    {% endfor %}
+    <h5>
+      Рейтинг:
+      {{ book.rating }}
+    </h5>
+    <h5>
+      Просмотры:
+      {{ book.view_count }}
+    </h5>
+  </div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'book_app/base.html' %}
+{% block content %}
+  <div class="back-link-div">
+    <a class="back-link" href="{{ request.META.HTTP_REFERER }}">Назад</a>
+  </div>
+  <form class="delete-form" method="post">
+    {% csrf_token %}
+    <p>
+      Вы точно хотите удалить "{{ book.title }}"?
+    </p>
+    {{ form.as_p }}
+    <input type="submit" value="Удалить" />
+    <a class="ms-5" href="{{ book.get_absolute_url }}"></a>
+  </form>
+{% endblock content %}
